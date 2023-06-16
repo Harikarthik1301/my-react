@@ -1,12 +1,9 @@
 import React from "react"
 
-const Footer = () => {
-    let year = new Date();
-
-
-
+const Footer = ({length}) => {
+    
   return (
-    <div className='footer'><p>Copyright &copy; {year.getFullYear()}</p>
+    <div className='footer'><p>Total Animes : {length}</p>
     </div>
   )
 }
