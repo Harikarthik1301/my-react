@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #dfdfdf;
 }
 
 code {
@@ -157,7 +158,7 @@ button:hover {
   justify-content: flex-start;
   margin: 0.25rem 0 0;
   padding: 0 0.5rem 0.25rem;
-  border-bottom: 1px solid #eee;
+ 
 }
 
 .searchForm input[type='text'] {
@@ -170,5 +171,5 @@ button:hover {
   outline: none;
 }
 .searchForm :focus {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(226, 196, 196);
 }
