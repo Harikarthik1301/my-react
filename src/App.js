@@ -6,12 +6,15 @@ import Footer from './components/Footer';
 import List from './components/List';
 import  { useState } from "react"
 import AddItems from './components/AddItems';
+import Search from './components/Search';
 
 
 
 function App() {
   
  const[NewItem,setNewItem]=useState('')
+ const[search,setsearch]=useState('')
+ const [items,setItems]= useState(JSON.parse(localStorage.getItem('anime_list')))
 
  const addNewItem = (anime)=>{
 const id = items.length?items.length+1 : 1
@@ -21,7 +24,7 @@ const id = items.length?items.length+1 : 1
  setItems(NewList)
  localStorage.setItem("anime_list",JSON.stringify (NewList))
 }
-  const [items,setItems]= useState(JSON.parse(localStorage.getItem('anime_list')))
+
  const handleCheck = (id) =>{
     const animenames = items.map((item) =>
     item.id === id ?{...item,checked:!item.checked} : item )
@@ -51,10 +54,14 @@ setNewItem('')
       setNewItem={setNewItem}
       handleAddItems={handleAddItems}
       />
-      <List items={items}
+            <Search 
+      search={search}
+      setsearch={setsearch}
+      />
+      <List items={items.filter(item => ((item.anime).toLowerCase()).includes(search.toLowerCase()))}
       handleCheck={handleCheck}
       handleDelete={handleDelete}/>
-      <Footer length={items.length}/>
+      <Footer items={items}/>
     </div>
   )
 }

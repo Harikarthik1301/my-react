@@ -1,10 +1,13 @@
 import React from "react"
 
-const Footer = ({length}) => {
+const Footer = ({items}) => {
     
   return (
-    <div className='footer'><p>Total Animes : {length}</p>
+    {items}?
+    <div className='footer'><p>Total Animes : {items.length}</p>
     </div>
+    :<h1>not working</h1>
+
   )
 }
 

@@ -146,3 +146,29 @@ button:hover {
   background-color: rgb(155, 155, 155);
   outline: none;
 }
+
+.formSearch{
+  display: flex;
+  margin-left: 300px;
+}
+.searchForm {
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  max-width: 100%;
+  min-height: 35px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 30px;
+  outline: none;
+}
+.searchForm :focus {
+  background-color: rgb(230, 230, 230);
+}
