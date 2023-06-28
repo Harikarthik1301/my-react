@@ -1,22 +1,20 @@
-import React from "react"
-import ListDisplay from "./ListDisplay"
+import React from "react";
+import ListDisplay from "./ListDisplay";
 
-const List = ({items,handleCheck,handleDelete}) => {
+const List = ({ items, handleCheck, handleDelete }) => {
   return (
     <>
-    <main>
-        {(items.length) ? (
-       <ListDisplay items={items}
-       handleCheck={handleCheck}
-       handleDelete={handleDelete}/>
-        ) 
-        : (
-            <p id="nodata">No Anime In The Watchlist...</p>
-            )
-    }
-</main>
-</>
-  )
-}
+      {items.length ? (
+        <ListDisplay
+          items={items}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+        />
+      ) : (
+        <p id="nodata">No Anime In The Watchlist...</p>
+      )}
+    </>
+  );
+};
 
-export default List
+export default List;
