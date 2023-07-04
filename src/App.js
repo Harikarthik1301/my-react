@@ -4,9 +4,10 @@ import Head from "./components/Header";
 import Footer from "./components/Footer";
 // import Counter from './components/Counter';
 import List from "./components/List";
-import { useState, useEffect } from "react";
+import {useState,useEffect } from "react";
 import AddItems from "./components/AddItems";
 import Search from "./components/Search";
+import ApiReq from "./components/ApiReq";
 
 function App() {
   const API_URl = "http://localhost:3500/items";
@@ -41,29 +42,52 @@ function App() {
   }, []);
 
   // ADD ITEM FUNCTION
-  const addNewItem = (anime) => {
+  const addNewItem =async (anime) => {
     const id = items.length ? items.length + 1 : 1;
     const adddedItem = { id, anime, checked: false };
     const NewList = [...items, adddedItem];
     console.log(NewList);
     setItems(NewList);
-    localStorage.setItem("anime_list", JSON.stringify(NewList));
+     const postoption ={
+       method : 'POST',
+       headers :{
+        'Content-Type':'application/json' 
+       },
+       body : JSON.stringify(adddedItem)
+     }
+    const result =await ApiReq(API_URl,postoption)
+    if(result)setFetcherror(result)
   };
 
   // CHECK ITEMS LIST FUNCTION
-  const handleCheck = (id) => {
+  const handleCheck =async (id) => {
     const animenames = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
     setItems(animenames);
-    localStorage.setItem("anime_list", JSON.stringify(animenames));
+    const updatedone = animenames.filter((item) => item.id===id)
+    const updateoption ={
+      method : 'PATCH',
+      headers :{
+       'Content-Type':'application/json' 
+      },
+      body : JSON.stringify({checked:updatedone[0].checked})
+    }
+    const reqUrl = `${API_URl}/${id}`
+   const result =await ApiReq(reqUrl,updateoption)
+   if(result)setFetcherror(result)
   };
 
   // DELETE BUTTON FUNCTION
-  const handleDelete = (id) => {
+  const handleDelete =async (id) => {
     const animedelete = items.filter((item) => item.id !== id);
     setItems(animedelete);
-    localStorage.setItem("anime_list", JSON.stringify(animedelete));
+    const deleteoption = {
+      method : "DELETE"
+    }
+    const reqUrl = `${API_URl}/${id}`
+   const result =await ApiReq(reqUrl,deleteoption)
+   if(result)setFetcherror(result)
   };
 
   const handleAddItems = (e) => {

@@ -1,39 +1,39 @@
 {
-    "items" :      [
-        {
-            "id" : 1,
-            "anime" : "Naruto",
-            "checked" : true 
-        },
-        {
-            "id" : 2,
-            "anime" : "Death Note",
-            "checked" : true 
-        },
-        {
-            "id" : 3,
-            "anime" : "Dragon Ball Z",
-            "checked" :false 
-        },
-        {
-            "id" : 4,
-            "anime" : "Tokyo Revengers",
-            "checked" :false 
-        },
-        {
-            "id" : 5,
-            "anime" : "Demon Slayer",
-            "checked" :true 
-        },
-        {
-            "id" : 6,
-            "anime" : "Attack On Titan",
-            "checked" :false 
-        },
-        {
-            "id" : 7,
-            "anime" : "Hunter X Hunter",
-            "checked" :true
-        }
-    ]
+  "items": [
+    {
+      "id": 1,
+      "anime": "Naruto",
+      "checked": true
+    },
+    {
+      "id": 2,
+      "anime": "Death Note",
+      "checked": true
+    },
+    {
+      "id": 3,
+      "anime": "Dragon Ball Z",
+      "checked": false
+    },
+    {
+      "id": 4,
+      "anime": "Tokyo Revengers",
+      "checked": false
+    },
+    {
+      "id": 5,
+      "anime": "Demon Slayer",
+      "checked": true
+    },
+    {
+      "id": 6,
+      "anime": "Attack On Titan",
+      "checked": false
+    },
+    {
+      "id": 7,
+      "anime": "Hunter X Hunter",
+      "checked": true
+    }
+  ]
 }
